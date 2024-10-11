@@ -9,6 +9,8 @@ Aplikasi Pencatat Hutang adalah aplikasi sederhana yang memungkinkan pengguna un
 - Menghapus hutang
 - Melihat daftar hutang
 
+![alt](example.png)
+
 ## Teknologi yang Digunakan
 
 - **HTML**: Struktur dasar aplikasi
