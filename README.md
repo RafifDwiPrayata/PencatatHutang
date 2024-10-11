@@ -31,4 +31,4 @@ Sebelum menjalankan aplikasi, pastikan Anda memiliki:
 **Clone repository ini:**
 
    ```bash
-   git clone https://github.com/username/repo-name.git
+   git clone https://github.com/rffdpryt/PencatatHutang.git
