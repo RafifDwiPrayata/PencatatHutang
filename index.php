@@ -142,6 +142,9 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border: 2px solid #2980B9;
         }
+        .hapus-btn{
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -175,7 +178,14 @@
             <input type="hidden" name="id" value="<?= $id ?>">
             <input type="text" name="name" placeholder="Nama" value="<?= $name ?>" required autofocus>
             <input type="number" name="amount" placeholder="Jumlah" value="<?= $amount ?>" min="0" required>
-            <input type="hidden" name="status" value="Belum Lunas">
+
+            <?php if ($isEditing): ?>
+                <select name="status" required>
+                    <option value="Lunas" <?= $status == 'Lunas' ? 'selected' : '' ?>>Lunas</option>
+                    <option value="Belum Lunas" <?= $status == 'Belum Lunas' ? 'selected' : '' ?>>Belum Lunas</option>
+                </select>
+            <?php endif; ?>
+
             <?php if ($isEditing): ?>
                 <button type="submit" name="edit">Edit</button>
             <?php else: ?>
@@ -184,7 +194,6 @@
         </form>
 
         <?php
-
         $stmt = $db->query("SELECT SUM(amount) AS total_amount FROM debts");
         $totalRow = $stmt->fetch();
         $totalAmount = number_format($totalRow['total_amount'], 0, ',', '.');
@@ -215,9 +224,9 @@
                         <td>{$row['status']}</td>
                         <td>
                             <a href='index.php?edit={$row['id']}'>Edit</a>
-                            <form action='crud.php' method='POST' style='display:inline;' onsubmit='return confirmDelete()'>
+                            <form action='crud.php' method='POST' class='action-buttons' onsubmit='return confirmDelete();'>
                                 <input type='hidden' name='id' value='{$row['id']}'>
-                                <button type='submit' name='delete'>Hapus</button>
+                                <button type='submit' class='hapus-btn' name='delete'>Hapus</button>
                             </form>
                         </td>
                     </tr>";
