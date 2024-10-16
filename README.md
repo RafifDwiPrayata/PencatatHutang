@@ -9,7 +9,7 @@ Aplikasi Pencatat Hutang adalah aplikasi sederhana yang memungkinkan pengguna un
 - Menghapus hutang
 - Melihat daftar hutang
 
-![alt](example.png)
+![alt](Image/Lampiran.png)
 
 ## Teknologi yang Digunakan
 
@@ -31,4 +31,4 @@ Sebelum menjalankan aplikasi, pastikan Anda memiliki:
 **Clone repository ini:**
 
    ```bash
-   git clone https://github.com/rffdpryt/PencatatHutang.git
+   git clone https://github.com/RafifDwiPrayata/PencatatHutang.git
